@@ -14,7 +14,6 @@
    <script type="text/javascript" src="view/js/jquery.ui.shake.js"></script>
    <script type="text/javascript">
       <?php if( FS_DEMO ){ ?>
-
          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -22,22 +21,16 @@
          ga('create', 'UA-417932-8', 'auto');
          ga('send', 'pageview');
       <?php } ?>
-
       $(document).ready(function() {
          <?php if( $fsc->get_errors() ){ ?>
-
          $("#box_login").shake();
          <?php } ?>
-
          
          <?php if( FS_DEMO ){ ?>
-
          document.f_login.user.focus();
          <?php }else{ ?>
-
          document.f_login.user.focus();
          <?php } ?>
-
          
          $("#b_feedback").click(function(event) {
             event.preventDefault();
@@ -63,32 +56,28 @@
                <span class="icon-bar"></span>
             </button>
             <?php if( FS_DEMO ){ ?>
-
             <a class="navbar-brand" href="index.php">DEMO</a>
             <?php }elseif( $fsc->empresa->nombrecorto ){ ?>
-
             <a class="navbar-brand" href="index.php"><?php echo $fsc->empresa->nombrecorto;?></a>
             <?php }else{ ?>
-
             <a class="navbar-brand" href="index.php"><?php echo $fsc->empresa->nombre;?></a>
             <?php } ?>
-
          </div>
          
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                <li>
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Ayuda">
-                     <span class="glyphicon glyphicon-question-sign hidden-xs"></span>
-                     <span class="visible-xs">Ayuda</span>
-                  </a>
+                  <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Ayuda">-->
+                     <!--<span class="glyphicon glyphicon-question-sign hidden-xs"></span>-->
+                     <!--<span class="visible-xs">Ayuda</span>-->
+                  <!--</a>-->
                   <ul class="dropdown-menu">
                      <!--<li><a href="<?php  echo FS_COMMUNITY_URL;?>/index.php?page=community_questions" target="_blank">Preguntas</a></li>-->
                      <!--<li><a href="<?php  echo FS_COMMUNITY_URL;?>/index.php?page=community_errors" target="_blank">Errores</a></li>-->
                      <!--<li><a href="<?php  echo FS_COMMUNITY_URL;?>/index.php?page=community_ideas" target="_blank">Sugerencias</a></li>-->
                      <!--<li><a href="<?php  echo FS_COMMUNITY_URL;?>/index.php?page=community_colabora" target="_blank">Colabora</a></li>-->
                      <!--<li class="divider"></li>-->
-                     <li><a href="#" id="b_feedback"><span class="glyphicon glyphicon-send"></span> &nbsp; Informar...</a></li>
+                     <!--<li><a href="#" id="b_feedback"><span class="glyphicon glyphicon-send"></span> &nbsp; Informar...</a></li>-->
                   </ul>
                </li>
             </ul>
@@ -97,26 +86,20 @@
    </nav>
    
    <?php if( $fsc->get_errors() ){ ?>
-
    <div class="alert alert-danger">
       <ul><?php $loop_var1=$fsc->get_errors(); $counter1=-1; if($loop_var1) foreach( $loop_var1 as $key1 => $value1 ){ $counter1++; ?><li><?php echo $value1;?></li><?php } ?></ul>
    </div>
    <?php } ?>
-
    <?php if( $fsc->get_messages() ){ ?>
-
    <div class="alert alert-success">
       <ul><?php $loop_var1=$fsc->get_messages(); $counter1=-1; if($loop_var1) foreach( $loop_var1 as $key1 => $value1 ){ $counter1++; ?><li><?php echo $value1;?></li><?php } ?></ul>
    </div>
    <?php } ?>
-
    <?php if( $fsc->get_advices() ){ ?>
-
    <div class="alert alert-info">
       <ul><?php $loop_var1=$fsc->get_advices(); $counter1=-1; if($loop_var1) foreach( $loop_var1 as $key1 => $value1 ){ $counter1++; ?><li><?php echo $value1;?></li><?php } ?></ul>
    </div>
    <?php } ?>
-
    
    <form name="f_login" action="index.php?nlogin=<?php echo $nlogin;?>" method="post" class="form" role="form">
       <div id="box_login" class="container">
@@ -134,46 +117,34 @@
                         <div class="col-sm-5">
                            <div class="thumbnail hidden-sm hidden-xs">
                               <?php if( FS_DEMO ){ ?>
-
                               <img src="view/img/logo.png" alt="logo"/>
                               <?php }elseif( file_exists('tmp/'.FS_TMP_NAME.'logo.png') ){ ?>
-
                               <img src="tmp/<?php  echo FS_TMP_NAME;?>logo.png" alt="<?php echo $fsc->empresa->nombre;?>"/>
                               <?php }elseif( file_exists('tmp/'.FS_TMP_NAME.'logo.jpg') ){ ?>
-
                               <img src="tmp/<?php  echo FS_TMP_NAME;?>logo.jpg" alt="<?php echo $fsc->empresa->nombre;?>"/>
                               <?php }else{ ?>
-
                               <img src="view/img/logo.png" alt="logo"/>
                               <?php } ?>
-
                            </div>
                         </div>
                         <div class="col-sm-7">
                            <?php if( FS_DEMO ){ ?>
-
                            <input type="hidden" name="password" value="demo"/>
                            <div class="form-group">
                               Escribe tu nombre:
                               <input type="text" class="form-control input-lg" name="user" maxlength="12" placeholder="Escribe tu nombre" autocomplete="off"/>
                            </div>
                            <?php }else{ ?>
-
                            <div class="form-group">
                               <input name="user" class="form-control input-lg user" onchange="" placeholder="usuario" ></input>
                               <!--select name="user" class="form-control input-lg" onchange="document.f_login.password.focus()">
                               <?php $loop_var1=$fsc->user->all(); $counter1=-1; if($loop_var1) foreach( $loop_var1 as $key1 => $value1 ){ $counter1++; ?>
-
                                  <?php if( $value1->nick == $nlogin ){ ?>
-
                                  <option value="<?php echo $value1->nick;?>" selected=""><?php echo $value1->nick;?></option>
                                  <?php }else{ ?>
-
                                  <option value="<?php echo $value1->nick;?>"><?php echo $value1->nick;?></option>
                                  <?php } ?>
-
                               <?php } ?>
-
                               </select-->
                            </div>
                            <div class="form-group">
@@ -183,7 +154,6 @@
                               </p-->
                            </div>
                            <?php } ?>
-
                            <button class="btn btn-block btn-primary" type="submit" id="login" onclick="this.disabled=true;this.form.submit();">
                               <span class="glyphicon glyphicon-log-in"></span> &nbsp; Iniciar sesión
                            </button>
@@ -200,7 +170,6 @@
    <div class="visible-md visible-lg" style="margin-bottom: 100px;"></div>
    
    <?php if( !FS_DEMO ){ ?>
-
    <div class="modal" id="modal_new_password">
       <div class="modal-dialog">
          <div class="modal-content">
@@ -216,17 +185,12 @@
                      <label>Usuario</label>
                      <select name="user" class="form-control">
                      <?php $loop_var1=$fsc->user->all(); $counter1=-1; if($loop_var1) foreach( $loop_var1 as $key1 => $value1 ){ $counter1++; ?>
-
                         <?php if( $value1->nick == $nlogin ){ ?>
-
                         <option value="<?php echo $value1->nick;?>" selected><?php echo $value1->nick;?></option>
                         <?php }else{ ?>
-
                         <option value="<?php echo $value1->nick;?>"><?php echo $value1->nick;?></option>
                         <?php } ?>
-
                      <?php } ?>
-
                      </select>
                   </div>
                   <div class="form-group">
@@ -249,17 +213,14 @@
       </div>
    </div>
    <?php } ?>
-
    
    <?php $tpl = new RainTPL;$tpl_dir_temp = self::$tpl_dir;$tpl->assign( $this->var );$tpl->draw( dirname("feedback") . ( substr("feedback",-1,1) != "/" ? "/" : "" ) . basename("feedback") );?>
-
    
    <hr style="margin-top: 50px;"/>
    
    <div class="container-fluid" style="margin-bottom: 10px;">
       <div class="row">
          <?php if( FS_DB_HISTORY ){ ?>
-
          <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="panel panel-default">
                <div class="panel-heading">
@@ -268,13 +229,11 @@
                <div class="panel-body">
                   <ol style="font-size: 11px; margin: 0px; padding: 0px 0px 0px 20px;">
                   <?php $loop_var1=$fsc->get_db_history(); $counter1=-1; if($loop_var1) foreach( $loop_var1 as $key1 => $value1 ){ $counter1++; ?><li><?php echo $value1;?></li><?php } ?>
-
                   </ol>
                </div>
             </div>
          </div>
          <?php } ?>
-
       </div>
       <div class="row">
          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
