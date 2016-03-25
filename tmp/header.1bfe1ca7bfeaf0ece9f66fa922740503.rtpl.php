@@ -138,14 +138,15 @@
                   </a>
                   <ul class="dropdown-menu">
                      <li><a href="<?php echo $fsc->user->url();?>">Config-User: <?php echo $fsc->user->nick;?></a></li>
-                     <li class="divider"></li>
-                     <li>
+                     <!--<li class="divider"></li>-->
+                     <!--li>
                         <a href="<?php echo $fsc->url();?>&logout=TRUE">
                            <span class="glyphicon glyphicon-log-out"></span> &nbsp; Cerrar sesión
                         </a>
-                     </li>
+                     </li-->
                   </ul>
                </li>
+               <li><a href="<?php echo $fsc->url();?>&logout=TRUE"><span class="glyphicon glyphicon-off"></span> &nbsp; Salir</a></li>
             </ul>
          </div>
       </div>

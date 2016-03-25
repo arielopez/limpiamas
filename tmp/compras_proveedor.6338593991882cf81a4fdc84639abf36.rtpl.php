@@ -141,7 +141,7 @@
          </a>
       </div>
       <div class="col-sm-7 col-xs-7 text-center">
-         <h2 style="margin-top: 0px;">Editar proveedor <?php echo $fsc->proveedor->codproveedor;?></h2>
+         <h2 style="margin-top: 0px;"><?php echo $fsc->proveedor->nombre;?></h2>
       </div>
       <div class="col-sm-2 col-xs-2 text-right">
          <a href="#" id="b_edit-form" class="btn btn-sm btn-primary">
