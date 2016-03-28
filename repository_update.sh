@@ -6,16 +6,16 @@ while [ ${continuar} = "y" ]; do
     read opcion
     case ${opcion} in
        1)
-            echo -n "Se descarga ultima version.. ";read a;
+            echo -n "Se descarga ultima version, precione enter para continuar..  ";read a;
             git pull
        ;;
        2)
-            echo -n "Se va ha actualizar git..";read a
+            echo -n "Se va ha actualizar git, precione enter para continuar..";read a
             git status
-            echo -n "Ahora se agregaran los archivos ."
+            echo -n "Ahora se agregaran los archivos, precione enter para continuar.. "
             read a
             git add .
-            echo -n "Ahora comprueba el estado de git: "
+            echo -n "Ahora comprueba el estado de git, precione enter para continuar "
             read a
             git status
             echo -n "Ingresa el mensaje: "
